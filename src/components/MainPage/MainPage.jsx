@@ -1,11 +1,14 @@
 import React from 'react'
+import CategorySort from "./CategorySort/CategorySort";
+import ProductList from "./ProductsList/ProductList";
 
 const MainPage = () => {
     return (
         <div>
-            MainPage
+            <CategorySort/>
+            <ProductList/>
         </div>
     )
-};
+}
 
 export default MainPage
