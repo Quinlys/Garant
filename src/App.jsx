@@ -4,16 +4,46 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
 import Footer from './components/Footer/Footer'
 import MainPage from "./components/MainPage/MainPage";
-import $ from 'jquery';
-import { findDOMNode } from 'react-dom';
+import {BrowserRouter, Route} from "react-router-dom";
+import ProductPage from "./components/ProductPage/ProductPage";
+import Admin from "./components/Admin/Admin";
+import Add from "./components/Admin/Add/Add";
+import SuccessPage from "./components/successPage/successPage";
+import ErrorPage from "./components/errorPage/errorPage";
 
-function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <MainPage/>
-      <Footer/>
-    </div>
+
+
+
+
+function App(props) {
+    let products = props.state.data
+        .map(product => <Route path={'/house' + product.id}><ProductPage type={product.type} price={product.price} address={product.address} description={product.description} longDescription={product.longDescription} img={product.img}/></Route>);
+
+    return (
+      <BrowserRouter>
+          <div className="App bg-light">
+              <Header/>
+              <Route exact path='/'>
+                <MainPage data={props.state.data}/>
+              </Route>
+              {
+                  products
+              }
+              <Route exact path='/admin'>
+                  <Admin data={props.state.data}/>
+              </Route>
+              <Route path='/admin/add'>
+                  <Add state={props.state}/>
+              </Route>
+              <Route path='/successPage'>
+                  <SuccessPage/>
+              </Route>
+              <Route path='/errorPage'>
+                  <ErrorPage/>
+              </Route>
+              <Footer/>
+          </div>
+      </BrowserRouter>
   );
 }
 

@@ -2,13 +2,13 @@ import React from 'react'
 import CategorySort from "./CategorySort/CategorySort";
 import ProductList from "./ProductsList/ProductList";
 
-const MainPage = () => {
+const MainPage = (props) => {
     return (
         <div>
             <CategorySort/>
-            <ProductList/>
+            <ProductList data={props.data}/>
         </div>
     )
-}
+};
 
 export default MainPage
