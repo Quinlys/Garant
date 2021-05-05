@@ -16,7 +16,7 @@ import ErrorPage from "./components/errorPage/errorPage";
 
 
 function App(props) {
-    let products = props.state.data
+    let products = props.store.getState().data
         .map(product => <Route path={'/house' + product.id}><ProductPage type={product.type} price={product.price} address={product.address} description={product.description} longDescription={product.longDescription} img={product.img}/></Route>);
 
     return (
@@ -24,16 +24,16 @@ function App(props) {
           <div className="App bg-light">
               <Header/>
               <Route exact path='/'>
-                <MainPage data={props.state.data}/>
+                <MainPage data={props.store.getState().data}/>
               </Route>
               {
                   products
               }
               <Route exact path='/admin'>
-                  <Admin data={props.state.data}/>
+                  <Admin data={props.store.getState().data}/>
               </Route>
               <Route path='/admin/add'>
-                  <Add state={props.state}/>
+                  <Add state={props.store.getState()}/>
               </Route>
               <Route path='/successPage'>
                   <SuccessPage/>

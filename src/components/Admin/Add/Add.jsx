@@ -1,8 +1,6 @@
 import React from 'react'
 import './Add.css'
 import {Dropdown, Form, Button} from "react-bootstrap";
-import {addImgInputsFields, changeCountRooms, changeTypeOfBuild, changeTypeOfSell} from "../../../redux/state";
-
 
 const Add = (props) => {
 
@@ -28,9 +26,9 @@ const Add = (props) => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={changeTypeOfSell}>Продаж</Dropdown.Item>
-                            <Dropdown.Item onClick={changeTypeOfSell}>Оренда</Dropdown.Item>
-                            <Dropdown.Item onClick={changeTypeOfSell}>Обмін</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfSell}>Продаж</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfSell}>Оренда</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfSell}>Обмін</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -41,12 +39,12 @@ const Add = (props) => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={changeTypeOfBuild}>Квартира</Dropdown.Item>
-                            <Dropdown.Item onClick={changeTypeOfBuild}>Дача</Dropdown.Item>
-                            <Dropdown.Item onClick={changeTypeOfBuild}>Будинок</Dropdown.Item>
-                            <Dropdown.Item onClick={changeTypeOfBuild}>Гараж</Dropdown.Item>
-                            <Dropdown.Item onClick={changeTypeOfBuild}>Земля</Dropdown.Item>
-                            <Dropdown.Item onClick={changeTypeOfBuild}>Комерційна нерухомість</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Квартира</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Дача</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Будинок</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Гараж</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Земля</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Комерційна нерухомість</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -57,10 +55,10 @@ const Add = (props) => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={changeCountRooms}>1</Dropdown.Item>
-                            <Dropdown.Item onClick={changeCountRooms}>2</Dropdown.Item>
-                            <Dropdown.Item onClick={changeCountRooms}>3</Dropdown.Item>
-                            <Dropdown.Item onClick={changeCountRooms}>4+</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeCountRooms}>1</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeCountRooms}>2</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeCountRooms}>3</Dropdown.Item>
+                            <Dropdown.Item onClick={props.changeCountRooms}>4+</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -89,7 +87,7 @@ const Add = (props) => {
                 <Form.Label>Повний опис</Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group>
-            <Button className='addPhoto bg-success' onClick={addImgInputsFields}>Добавити поле для фото</Button>
+            <Button className='addPhoto bg-success' onClick={props.addImgInputsFields()}>Добавити поле для фото</Button>
             <div className="InputsPhoto">
                 {
                     imgInputs

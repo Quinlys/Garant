@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from "./App";
 
-export let rerenderEntireTree = (state) => {
+export let rerenderEntireTree = (store) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state}/>
+            <App store={store}/>
         </React.StrictMode>,
         document.getElementById('root')
     );
