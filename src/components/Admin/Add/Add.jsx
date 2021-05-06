@@ -87,7 +87,7 @@ const Add = (props) => {
                 <Form.Label>Повний опис</Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group>
-            <Button className='addPhoto bg-success' onClick={props.addImgInputsFields()}>Добавити поле для фото</Button>
+            <Button className='addPhoto bg-success' onClick={props.addImgInputsFields}>Добавити поле для фото</Button>
             <div className="InputsPhoto">
                 {
                     imgInputs
