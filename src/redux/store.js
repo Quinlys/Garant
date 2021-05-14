@@ -74,7 +74,8 @@ let store = {
     },
     dispatch(action) {
         if (action.type === 'ADD-IMG-INPUTS-FIELDS') {
-
+            this._state.imgInputsFields++;
+            rerenderEntireTree(this);
         } else if (action.type === 'CHANGE-TYPE-OF-SELL') {
 
         } else if (action.type === 'CHANGE-TYPE-OF-BUILD') {

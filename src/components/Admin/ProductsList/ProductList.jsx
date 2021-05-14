@@ -7,7 +7,7 @@ const ProductList = (props) => {
 
 
 
-    let cards = props.data
+    let cards = props.state
         .map( card => <Product img={card.img[0]} id={card.id} price={card.price} type={card.type} description={card.description} address={card.address}/>
     );
 

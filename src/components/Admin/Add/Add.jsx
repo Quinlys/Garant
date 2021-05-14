@@ -14,6 +14,20 @@ const Add = (props) => {
     let countOfRoomsText = 'Не вибрано';
 
 
+    const changeTypeOfSell = () => {
+
+    };
+    const changeTypeOfBuild = () => {
+
+    };
+    const changeCountRooms = () => {
+
+    };
+    const addImgInputsFields = () => {
+        props.dispatch({type: 'ADD-IMG-INPUTS-FIELDS'})
+    };
+
+
 
     return (
         <div className="container" style={{marginTop: '100px', marginBottom: '100px'}}>
@@ -86,7 +100,7 @@ const Add = (props) => {
                 <Form.Label>Повний опис</Form.Label>
                 <Form.Control as="textarea" rows={3} />
             </Form.Group>
-            <Button className='addPhoto bg-success' onClick={props.addImgInputsFields}>Добавити поле для фото</Button>
+            <Button className='addPhoto bg-success' onClick={addImgInputsFields}>Добавити поле для фото</Button>
             <div className="InputsPhoto">
                 {
                     imgInputs
