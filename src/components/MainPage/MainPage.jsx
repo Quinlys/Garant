@@ -6,7 +6,7 @@ const MainPage = (props) => {
     return (
         <div>
             <CategorySort/>
-            <ProductList data={props.data}/>
+            <ProductList state={props.state}/>
         </div>
     )
 };
