@@ -61,42 +61,32 @@ let store = {
         rerenderEntireTree(this._state);
     },
     changeTypeOfSell(event) {
-        const value = event.target.innerHTML;
-        this._state.addItem.typeSell = value;
+        this._state.addItem.typeSell = event.target.innerHTML;
         rerenderEntireTree(this._state);
     },
     changeTypeOfBuild(event) {
-        const value = event.target.innerHTML;
-        this._state.addItem.typeSell = value;
+        this._state.addItem.typeSell = event.target.innerHTML;
         rerenderEntireTree(this._state);
     },
     changeCountRooms(event) {
-        const value = event.target.innerHTML;
-        this._state.addItem.typeSell = value;
+        this._state.addItem.typeSell = event.target.innerHTML;
         rerenderEntireTree(this._state);
     },
+    dispatch(action) {
+        if (action.type === 'ADD-IMG-INPUTS-FIELDS') {
 
+        } else if (action.type === 'CHANGE-TYPE-OF-SELL') {
+
+        } else if (action.type === 'CHANGE-TYPE-OF-BUILD') {
+
+        } else if (action.type === 'CHANGE-TYPE-OF-ROOMS') {
+
+        }
+
+    }
 };
 
 
-
-// export let changeTypeOfSell = event => {
-//     const value = event.target.innerHTML;
-//     state.addItem.typeSell = value;
-//     rerenderEntireTree(state);
-// };
-
-// export let changeTypeOfBuild = event => {
-//     const value = event.target.innerHTML;
-//     state.addItem.typeBuild = value;
-//     rerenderEntireTree(state);
-// };
-
-// export let changeCountRooms = event => {
-//     const value = event.target.innerHTML;
-//     state.addItem.countRooms = value;
-//     rerenderEntireTree(state);
-// };
 
 
 export default store;

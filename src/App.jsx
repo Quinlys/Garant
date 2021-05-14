@@ -32,7 +32,7 @@ function App(props) {
                   <Admin data={props.store.getState().data}/>
               </Route>
               <Route path='/admin/add'>
-                  <Add state={props.store.getState()}/>
+                  <Add state={props.store.getState()} dispatch={props.dispatch}/>
               </Route>
               <Route path='/successPage'>
                   <SuccessPage/>

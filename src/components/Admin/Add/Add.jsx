@@ -5,7 +5,6 @@ import {Dropdown, Form, Button} from "react-bootstrap";
 const Add = (props) => {
 
     let imgInputs = [];
-    console.log(props.state.imgInputsFields);
     for (let i = 0; i < props.state.imgInputsFields; i++) {
         imgInputs[i] = <Form.Group className="photo" style={{marginTop: '20px'}}><Form.Control type="text" placeholder="Посилання на фото" /></Form.Group>
     }
