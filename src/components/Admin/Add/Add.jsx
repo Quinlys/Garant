@@ -1,6 +1,12 @@
 import React from 'react'
 import './Add.css'
 import {Dropdown, Form, Button} from "react-bootstrap";
+import {
+    addImgInputsFieldsActionCreator,
+    changeCountOfRoomsActionCreator,
+    changeTypeOfBuildActionCreator,
+    changeTypeOfSellActionCreator
+} from "../../../redux/store";
 
 const Add = (props) => {
 
@@ -15,26 +21,17 @@ const Add = (props) => {
 
 
     const changeTypeOfSell = (event) => {
-        props.dispatch({
-            type: 'CHANGE-TYPE-OF-SELL',
-            info: event.target.innerHTML
-        })
+        props.dispatch(changeTypeOfSellActionCreator(event.target.innerHTML))
+
     };
     const changeTypeOfBuild = (event) => {
-        props.dispatch({
-            type: 'CHANGE-TYPE-OF-BUILD',
-            info: event.target.innerHTML
-        })
+        props.dispatch(changeTypeOfBuildActionCreator(event.target.innerHTML))
     };
-    const changeCountRooms = (event) => {
-        props.dispatch({
-            type: 'CHANGE-COUNT-OF-ROOMS',
-            info: event.target.innerHTML
-
-        })
+    const changeCountOfRooms = (event) => {
+        props.dispatch(changeCountOfRoomsActionCreator(event.target.innerHTML))
     };
-    const addImgInputsFields = (event) => {
-        props.dispatch({type: 'ADD-IMG-INPUTS-FIELDS'})
+    const addImgInputsFields = () => {
+        props.dispatch(addImgInputsFieldsActionCreator)
     };
 
 
@@ -78,10 +75,10 @@ const Add = (props) => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={changeCountRooms}>1</Dropdown.Item>
-                            <Dropdown.Item onClick={changeCountRooms}>2</Dropdown.Item>
-                            <Dropdown.Item onClick={changeCountRooms}>3</Dropdown.Item>
-                            <Dropdown.Item onClick={changeCountRooms}>4+</Dropdown.Item>
+                            <Dropdown.Item onClick={changeCountOfRooms}>1</Dropdown.Item>
+                            <Dropdown.Item onClick={changeCountOfRooms}>2</Dropdown.Item>
+                            <Dropdown.Item onClick={changeCountOfRooms}>3</Dropdown.Item>
+                            <Dropdown.Item onClick={changeCountOfRooms}>4+</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>

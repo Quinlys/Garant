@@ -1,5 +1,11 @@
 import {rerenderEntireTree} from "../index";
 
+const CHANGE_TYPE_OF_SELL = 'CHANGE-TYPE-OF-SELL';
+const CHANGE_TYPE_OF_BUILD = 'CHANGE-TYPE-OF-BUILD';
+const CHANGE_COUNT_OF_ROOMS = 'CHANGE-COUNT-OF-ROOMS';
+const ADD_IMG_INPUTS_FILEDS = 'ADD-IMG-INPUTS-FIELDS';
+
+
 let store = {
     _state: {
         data:   [
@@ -57,16 +63,17 @@ let store = {
       return this._state;
     },
     dispatch(action) {
-        if (action.type === 'ADD-IMG-INPUTS-FIELDS') {
+        debugger;
+        if (action.type === ADD_IMG_INPUTS_FILEDS) {
             this._state.imgInputsFields++;
             rerenderEntireTree(this);
-        } else if (action.type === 'CHANGE-TYPE-OF-SELL') {
+        } else if (action.type === CHANGE_TYPE_OF_SELL) {
             this._state.addItem.typeSell = action.info;
             rerenderEntireTree(this);
-        } else if (action.type === 'CHANGE-TYPE-OF-BUILD') {
+        } else if (action.type === CHANGE_TYPE_OF_BUILD) {
             this._state.addItem.typeBuild = action.info;
             rerenderEntireTree(this);
-        } else if (action.type === 'CHANGE-COUNT-OF-ROOMS') {
+        } else if (action.type === CHANGE_COUNT_OF_ROOMS) {
             this._state.addItem.countRooms = action.info;
             rerenderEntireTree(this);
         }
@@ -75,6 +82,10 @@ let store = {
 };
 
 
+export const addImgInputsFieldsActionCreator = () => ({type: ADD_IMG_INPUTS_FILEDS});
+export const changeTypeOfSellActionCreator = (text) => ({type: CHANGE_TYPE_OF_SELL, info: text});
+export const changeTypeOfBuildActionCreator = (text) => ({type: CHANGE_TYPE_OF_BUILD, info: text});
+export const changeCountOfRoomsActionCreator = (text) => ({type: CHANGE_COUNT_OF_ROOMS, info: text});
 
 
 export default store;
