@@ -56,32 +56,19 @@ let store = {
     getState() {
       return this._state;
     },
-    addImgInputsFields() {
-        this._state.imgInputsFields++;
-        rerenderEntireTree(this._state);
-    },
-    changeTypeOfSell(event) {
-        this._state.addItem.typeSell = event.target.innerHTML;
-        rerenderEntireTree(this._state);
-    },
-    changeTypeOfBuild(event) {
-        this._state.addItem.typeSell = event.target.innerHTML;
-        rerenderEntireTree(this._state);
-    },
-    changeCountRooms(event) {
-        this._state.addItem.typeSell = event.target.innerHTML;
-        rerenderEntireTree(this._state);
-    },
     dispatch(action) {
         if (action.type === 'ADD-IMG-INPUTS-FIELDS') {
             this._state.imgInputsFields++;
             rerenderEntireTree(this);
         } else if (action.type === 'CHANGE-TYPE-OF-SELL') {
-
+            this._state.addItem.typeSell = action.info;
+            rerenderEntireTree(this);
         } else if (action.type === 'CHANGE-TYPE-OF-BUILD') {
-
-        } else if (action.type === 'CHANGE-TYPE-OF-ROOMS') {
-
+            this._state.addItem.typeBuild = action.info;
+            rerenderEntireTree(this);
+        } else if (action.type === 'CHANGE-COUNT-OF-ROOMS') {
+            this._state.addItem.countRooms = action.info;
+            rerenderEntireTree(this);
         }
 
     }

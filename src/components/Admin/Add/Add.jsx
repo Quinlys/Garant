@@ -14,16 +14,26 @@ const Add = (props) => {
     let countOfRoomsText = 'Не вибрано';
 
 
-    const changeTypeOfSell = () => {
-
+    const changeTypeOfSell = (event) => {
+        props.dispatch({
+            type: 'CHANGE-TYPE-OF-SELL',
+            info: event.target.innerHTML
+        })
     };
-    const changeTypeOfBuild = () => {
-
+    const changeTypeOfBuild = (event) => {
+        props.dispatch({
+            type: 'CHANGE-TYPE-OF-BUILD',
+            info: event.target.innerHTML
+        })
     };
-    const changeCountRooms = () => {
+    const changeCountRooms = (event) => {
+        props.dispatch({
+            type: 'CHANGE-COUNT-OF-ROOMS',
+            info: event.target.innerHTML
 
+        })
     };
-    const addImgInputsFields = () => {
+    const addImgInputsFields = (event) => {
         props.dispatch({type: 'ADD-IMG-INPUTS-FIELDS'})
     };
 
@@ -39,9 +49,9 @@ const Add = (props) => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={props.changeTypeOfSell}>Продаж</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeTypeOfSell}>Оренда</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeTypeOfSell}>Обмін</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfSell}>Продаж</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfSell}>Оренда</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfSell}>Обмін</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -52,12 +62,12 @@ const Add = (props) => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Квартира</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Дача</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Будинок</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Гараж</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Земля</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeTypeOfBuild}>Комерційна нерухомість</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfBuild}>Квартира</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfBuild}>Дача</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfBuild}>Будинок</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfBuild}>Гараж</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfBuild}>Земля</Dropdown.Item>
+                            <Dropdown.Item onClick={changeTypeOfBuild}>Комерційна нерухомість</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -68,10 +78,10 @@ const Add = (props) => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={props.changeCountRooms}>1</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeCountRooms}>2</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeCountRooms}>3</Dropdown.Item>
-                            <Dropdown.Item onClick={props.changeCountRooms}>4+</Dropdown.Item>
+                            <Dropdown.Item onClick={changeCountRooms}>1</Dropdown.Item>
+                            <Dropdown.Item onClick={changeCountRooms}>2</Dropdown.Item>
+                            <Dropdown.Item onClick={changeCountRooms}>3</Dropdown.Item>
+                            <Dropdown.Item onClick={changeCountRooms}>4+</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
