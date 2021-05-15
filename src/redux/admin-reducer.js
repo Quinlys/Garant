@@ -26,3 +26,9 @@ export const adminReducer = (state, action) => {
 
     }
 };
+
+
+export const addImgInputsFieldsActionCreator = () => ({type: ADD_IMG_INPUTS_FIELDS});
+export const changeTypeOfSellActionCreator = (text) => ({type: CHANGE_TYPE_OF_SELL, info: text});
+export const changeTypeOfBuildActionCreator = (text) => ({type: CHANGE_TYPE_OF_BUILD, info: text});
+export const changeCountOfRoomsActionCreator = (text) => ({type: CHANGE_COUNT_OF_ROOMS, info: text});

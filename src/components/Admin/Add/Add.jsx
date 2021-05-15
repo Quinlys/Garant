@@ -6,7 +6,7 @@ import {
     changeCountOfRoomsActionCreator,
     changeTypeOfBuildActionCreator,
     changeTypeOfSellActionCreator
-} from "../../../redux/store";
+} from "../../../redux/admin-reducer";
 
 const Add = (props) => {
 
