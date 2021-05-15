@@ -1,9 +1,10 @@
+import {adminReducer} from "./admin-reducer";
 import {rerenderEntireTree} from "../index";
 
 const CHANGE_TYPE_OF_SELL = 'CHANGE-TYPE-OF-SELL';
 const CHANGE_TYPE_OF_BUILD = 'CHANGE-TYPE-OF-BUILD';
 const CHANGE_COUNT_OF_ROOMS = 'CHANGE-COUNT-OF-ROOMS';
-const ADD_IMG_INPUTS_FILEDS = 'ADD-IMG-INPUTS-FIELDS';
+const ADD_IMG_INPUTS_FIELDS = 'ADD-IMG-INPUTS-FIELDS';
 
 
 let store = {
@@ -67,26 +68,15 @@ let store = {
       return this._state;
     },
     dispatch(action) {
-        debugger;
-        if (action.type === ADD_IMG_INPUTS_FILEDS) {
-            this._state.adminPage.imgInputsFields++;
-            rerenderEntireTree(this);
-        } else if (action.type === CHANGE_TYPE_OF_SELL) {
-            this._state.adminPage.addItem.typeSell = action.info;
-            rerenderEntireTree(this);
-        } else if (action.type === CHANGE_TYPE_OF_BUILD) {
-            this._state.adminPage.addItem.typeBuild = action.info;
-            rerenderEntireTree(this);
-        } else if (action.type === CHANGE_COUNT_OF_ROOMS) {
-            this._state.adminPage.addItem.countRooms = action.info;
-            rerenderEntireTree(this);
-        }
+        this._state.adminPage = adminReducer(this._state.adminPage, action);
+
+        rerenderEntireTree(this)
 
     }
 };
 
 
-export const addImgInputsFieldsActionCreator = () => ({type: ADD_IMG_INPUTS_FILEDS});
+export const addImgInputsFieldsActionCreator = () => ({type: ADD_IMG_INPUTS_FIELDS});
 export const changeTypeOfSellActionCreator = (text) => ({type: CHANGE_TYPE_OF_SELL, info: text});
 export const changeTypeOfBuildActionCreator = (text) => ({type: CHANGE_TYPE_OF_BUILD, info: text});
 export const changeCountOfRoomsActionCreator = (text) => ({type: CHANGE_COUNT_OF_ROOMS, info: text});
