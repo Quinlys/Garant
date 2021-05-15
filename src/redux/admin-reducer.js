@@ -1,13 +1,25 @@
-
-
 const CHANGE_TYPE_OF_SELL = 'CHANGE-TYPE-OF-SELL';
 const CHANGE_TYPE_OF_BUILD = 'CHANGE-TYPE-OF-BUILD';
 const CHANGE_COUNT_OF_ROOMS = 'CHANGE-COUNT-OF-ROOMS';
 const ADD_IMG_INPUTS_FIELDS = 'ADD-IMG-INPUTS-FIELDS';
+let initialState = {
+    imgInputsFields: 1,
+    addItem: {
+        id: '',
+        img: '',
+        typeSell: '',
+        typeBuild: '',
+        countRooms: '',
+        description: '',
+        longDescription: '',
+        price: '',
+        address: ''
+    }
+};
 
-export const adminReducer = (state, action) => {
+export const adminReducer = (state = initialState, action) => {
 
-
+    debugger;
     switch(action.type) {
         case ADD_IMG_INPUTS_FIELDS:
             state.imgInputsFields++;

@@ -31,7 +31,7 @@ const Add = (props) => {
         props.dispatch(changeCountOfRoomsActionCreator(event.target.innerHTML))
     };
     const addImgInputsFields = () => {
-        props.dispatch(addImgInputsFieldsActionCreator)
+        props.dispatch(addImgInputsFieldsActionCreator())
     };
 
 
