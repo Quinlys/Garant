@@ -8,56 +8,60 @@ const ADD_IMG_INPUTS_FILEDS = 'ADD-IMG-INPUTS-FIELDS';
 
 let store = {
     _state: {
-        data:   [
-            {
-                id: 1,
-                img: ['https://img.lunstatic.net/building-440x330/40188.jpg','https://img.lunstatic.net/building-440x330/40188.jpg','https://img.lunstatic.net/building-440x330/40188.jpg','https://img.lunstatic.net/building-440x330/40188.jpg'],
-                type: 1,
-                description: 'strias;kldasl;kdjhkdskjasdkldjklaskdjkdkhladslkhasd;asdalskdng',
-                longDescription: 'longString  lofadsndadjasdnsadaskdljad;ibjasdjadabdn;dsaskdfjksfnsw;newpijfbwihofcbwdicwoifwowhwejofbjj',
-                price: '111 211$',
-                address: 'Кри8'
-            },
-            {
-                id: 2,
-                img: ['https://img.lunstatic.net/building-440x330/40188.jpg'],
-                type: 1,
-                description: 'string',
-                longDescription: 'longString',
-                price: '111 211$',
-                address: 'Кри8'
-            },
-            {
-                id: 3,
-                img: ['https://img.lunstatic.net/building-440x330/40188.jpg'],
-                type: 2,
-                description: 'string',
-                longDescription: 'longString',
-                price: '111 111$',
-                address: 'Крипякча 8'
-            },
-            {
-                id: 4,
-                img: ['https://img.lunstatic.net/building-440x330/40188.jpg'],
-                type: 3,
-                description: 'ring',
-                longDescription: 'longString',
-                price: '111 211$',
-                address: 'Крипякевича 2'
+        mainPage: {
+            data:   [
+                {
+                    id: 1,
+                    img: ['https://img.lunstatic.net/building-440x330/40188.jpg','https://img.lunstatic.net/building-440x330/40188.jpg','https://img.lunstatic.net/building-440x330/40188.jpg','https://img.lunstatic.net/building-440x330/40188.jpg'],
+                    type: 1,
+                    description: 'strias;kldasl;kdjhkdskjasdkldjklaskdjkdkhladslkhasd;asdalskdng',
+                    longDescription: 'longString  lofadsndadjasdnsadaskdljad;ibjasdjadabdn;dsaskdfjksfnsw;newpijfbwihofcbwdicwoifwowhwejofbjj',
+                    price: '111 211$',
+                    address: 'Кри8'
+                },
+                {
+                    id: 2,
+                    img: ['https://img.lunstatic.net/building-440x330/40188.jpg'],
+                    type: 1,
+                    description: 'string',
+                    longDescription: 'longString',
+                    price: '111 211$',
+                    address: 'Кри8'
+                },
+                {
+                    id: 3,
+                    img: ['https://img.lunstatic.net/building-440x330/40188.jpg'],
+                    type: 2,
+                    description: 'string',
+                    longDescription: 'longString',
+                    price: '111 111$',
+                    address: 'Крипякча 8'
+                },
+                {
+                    id: 4,
+                    img: ['https://img.lunstatic.net/building-440x330/40188.jpg'],
+                    type: 3,
+                    description: 'ring',
+                    longDescription: 'longString',
+                    price: '111 211$',
+                    address: 'Крипякевича 2'
+                }
+            ]
+        },
+        adminPage: {
+            imgInputsFields: 1,
+            addItem: {
+                id: '',
+                img: '',
+                typeSell: '',
+                typeBuild: '',
+                countRooms: '',
+                description: '',
+                longDescription: '',
+                price: '',
+                address: ''
             }
-        ],
-        imgInputsFields: 1,
-        addItem: {
-            id: '',
-            img: '',
-            typeSell: '',
-            typeBuild: '',
-            countRooms: '',
-            description: '',
-            longDescription: '',
-            price: '',
-            address: ''
-        }
+        },
     },
     getState() {
       return this._state;
@@ -65,16 +69,16 @@ let store = {
     dispatch(action) {
         debugger;
         if (action.type === ADD_IMG_INPUTS_FILEDS) {
-            this._state.imgInputsFields++;
+            this._state.adminPage.imgInputsFields++;
             rerenderEntireTree(this);
         } else if (action.type === CHANGE_TYPE_OF_SELL) {
-            this._state.addItem.typeSell = action.info;
+            this._state.adminPage.addItem.typeSell = action.info;
             rerenderEntireTree(this);
         } else if (action.type === CHANGE_TYPE_OF_BUILD) {
-            this._state.addItem.typeBuild = action.info;
+            this._state.adminPage.addItem.typeBuild = action.info;
             rerenderEntireTree(this);
         } else if (action.type === CHANGE_COUNT_OF_ROOMS) {
-            this._state.addItem.countRooms = action.info;
+            this._state.adminPage.addItem.countRooms = action.info;
             rerenderEntireTree(this);
         }
 
